@@ -1,0 +1,59 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Gestor D&D de Nico</title>
+  <link rel="stylesheet" href="estilo.css">
+  <script src="funcion.js" defer></script>
+</head>
+<body>
+
+<h1>🐉 Base de datos de Nico</h1>
+
+<div class="controls">
+  <input type="text" id="search" placeholder="Buscar nombre, clase, raza..." style="flex:1; min-width:140px;">
+  <select id="type">
+    <option value="all">Todos</option>
+    <option value="pc">Personajes</option>
+    <option value="mob">Monstruos</option>
+  </select>
+</div>
+
+<div id="grid" class="grid">
+  <div class="empty-msg">Cargando datos desde la plantilla...</div>
+</div>
+
+<div class="section-box">
+  <h2>⚔️ Simulador de combate</h2>
+  <div class="combat-row">
+    <select id="attacker" style="flex:1; min-width:140px;">
+      <option value="">— Atacante —</option>
+    </select>
+    <label style="font-size:13px; color:#aaa;">CA objetivo</label>
+    <input type="number" id="ac" value="15" min="1" max="30" style="width:64px;">
+    <button id="btnAttack">🎲 Tirar ataque</button>
+  </div>
+  <div id="combatResult" class="result-box" style="color:#666;">Selecciona un atacante</div>
+  <div id="combatLog" class="log"></div>
+</div>
+
+<div class="section-box">
+  <h2>🎲 Lanzador de dados</h2>
+  <div class="dice-grid" id="diceGrid"></div>
+  <div class="combat-row">
+    <label style="font-size:13px; color:#aaa;">Cantidad:</label>
+    <input type="number" id="diceQty" value="1" min="1" max="20" style="width:58px;">
+    <label style="font-size:13px; color:#aaa;">Modificador:</label>
+    <input type="number" id="diceMod" value="0" min="-20" max="20" style="width:58px;">
+    <button id="btnRollDice" style="margin-left:auto;">Tirar</button>
+    <button id="btnClearDice" class="secondary">Limpiar</button>
+  </div>
+  <div class="arena" id="arena"></div>
+  <div id="diceResult" class="dice-result-box">
+    <div style="color:#555; font-size:14px;">Elegí un dado y tirá.</div>
+  </div>
+  <div class="log" id="diceLog"></div>
+</div>
+</body>
+</html>
